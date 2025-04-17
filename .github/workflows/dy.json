@@ -1,1 +1,478 @@
-{"log":{"disabled":false,"level":"info","timestamp":true},"dns":{"servers":[{"tag":"dns_proxy","address":"tls://1.1.1.1","address_resolver":"dns_resolver"},{"tag":"dns_direct","address":"tls://1.1.1.1","address_resolver":"dns_resolver"},{"tag":"dns_resolver","address":"tls://1.1.1.1"}],"rules":[{"outbound":["any"],"server":"dns_resolver"},{"geosite":["geolocation-!cn"],"server":"dns_proxy"}],"final":"dns_proxy","independent_cache":true},"ntp":{"enabled":true,"server":"time.apple.com","server_port":123,"interval":"30m","detour":"DIRECT"},"inbounds":[{"type":"mixed","tag":"mixed-in","listen":"0.0.0.0","listen_port":2080},{"type":"tun","tag":"tun-in","inet4_address":"172.19.0.1/30","auto_route":true,"strict_route":true,"stack":"mixed","sniff":true}],"outbounds":[{"type":"direct","tag":"DIRECT"},{"type":"dns","tag":"dns-out"},{"type":"trojan","tag":"🇸🇬 ***更新日期：2025.04.17***","server":"us-la-01.cjmom.us","server_port":31178,"password":"zEnyvyleum","tls":{"enabled":true,"server_name":"www.baidu.com","alpn":["h3%2Ch2%2Chttp%2F1.1"],"insecure":true},"tcp_fast_open":false},{"type":"vmess","tag":"US_CA_02","server":"us-la-01.cjmom.us","server_port":52914,"uuid":"deab221b-0aa8-4980-85e8-933358535e4a","alter_id":0,"security":"auto","tcp_fast_open":false},{"type":"vless","tag":"US_CA_03","server":"us-la-01.cjmom.us","server_port":31199,"uuid":"aed73f61-bf00-4d2a-ae3a-3a17b77b29ce","flow":"xtls-rprx-vision","tls":{"enabled":true,"server_name":"www.yahoo.com","insecure":true,"utls":{"enabled":true,"fingerprint":"chrome"},"reality":{"enabled":true,"public_key":"lZlCZKE0KFeSYPhnGw-GOi3dAEtMgw_UtUGvaykUmiw","short_id":"4e5c"}},"tcp_fast_open":false},{"type":"vless","tag":"KO_01","server":"13.125.94.238","server_port":27018,"uuid":"394200f8-e6b2-46d9-9c72-d820e01e42a5","flow":"xtls-rprx-vision","tls":{"enabled":true,"server_name":"www.yahoo.com","insecure":true,"utls":{"enabled":true,"fingerprint":"chrome"},"reality":{"enabled":true,"public_key":"PBBZ7GsalxVujT9C8S3A6JPs-1meaJZ11uLv_eosAis","short_id":"3e7482c1"}},"tcp_fast_open":false},{"type":"hysteria2","tag":"KO_02","server":"13.125.94.238","server_port":40071,"password":"394200f8-e6b2-46d9-9c72-d820e01e42a5","tls":{"enabled":true,"insecure":true},"tcp_fast_open":false},{"type":"vless","tag":"JPN_01","server":"54.92.80.253","server_port":48752,"uuid":"7f951532-dd6c-463f-99f0-d80bf762d37c","flow":"xtls-rprx-vision","tls":{"enabled":true,"server_name":"www.yahoo.com","insecure":true,"utls":{"enabled":true,"fingerprint":"chrome"},"reality":{"enabled":true,"public_key":"k5C7N6ATRJGpJPzK5ca5v833gVvtpSG72tIuoZhFEH8","short_id":"51a3e57a"}},"tcp_fast_open":false},{"type":"vmess","tag":"JPN_02","server":"54.92.80.253","server_port":48753,"uuid":"7f951532-dd6c-463f-99f0-d80bf762d37c","alter_id":0,"security":"auto","transport":{"type":"ws","path":"7f951532-dd6c-463f-99f0-d80bf762d37c-vm","headers":{"Host":"www.bing.com"}},"tcp_fast_open":false},{"type":"hysteria2","tag":"JPN_03","server":"54.92.80.253","server_port":48754,"password":"7f951532-dd6c-463f-99f0-d80bf762d37c","tls":{"enabled":true,"server_name":"www.bing.com","insecure":true},"tcp_fast_open":false},{"type":"selector","tag":"🚀 节点选择","outbounds":["♻️ 自动选择","☑️ 手动切换","DIRECT"]},{"type":"selector","tag":"☑️ 手动切换","outbounds":["🇸🇬 ***更新日期：2025.04.17***","US_CA_02","US_CA_03","KO_01","KO_02","JPN_01","JPN_02","JPN_03"]},{"type":"urltest","tag":"♻️ 自动选择","outbounds":["🇸🇬 ***更新日期：2025.04.17***","US_CA_02","US_CA_03","KO_01","KO_02","JPN_01","JPN_02","JPN_03"],"url":"http://www.gstatic.com/generate_204","interval":"5m","tolerance":50},{"type":"selector","tag":"🎯 全球直连","outbounds":["DIRECT","🚀 节点选择","♻️ 自动选择"]},{"type":"selector","tag":"GLOBAL","outbounds":["DIRECT","🇸🇬 ***更新日期：2025.04.17***","US_CA_02","US_CA_03","KO_01","KO_02","JPN_01","JPN_02","JPN_03"]}],"route":{"rules":[{"protocol":"dns","outbound":"dns-out"},{"domain_suffix":["1password.com","adguard.org","bit.no.com","btlibrary.me","cloudcone.com","dubox.com","gameloft.com","garena.com","hoyolab.com","inoreader.com","ip138.com","linkedin.com","myteamspeak.com","notion.so","ping.pe","reddit.com","teddysun.com","tumbex.com","twdvd.com","unsplash.com","buzzsprout.com","jw-cdn.org","jw.org","jwpub.org","jwevent.org","eu","hk","jp","kr","sg","tw","uk","4sqi.net","a248.e.akamai.net","adobedtm.com","ampproject.org","android.com","aolcdn.com","apkmirror.com","apkpure.com","app-measurement.com","appspot.com","archive.org","armorgames.com","aspnetcdn.com","awsstatic.com","azureedge.net","azurewebsites.net","bandwagonhost.com","bing.com","bkrtx.com","blogcdn.com","blogger.com","blogsmithmedia.com","blogspot.com","blogspot.hk","blogspot.jp","bloomberg.cn","bloomberg.com","box.com","cachefly.net","cdnst.net","cloudfront.net","comodoca.com","daum.net","deskconnect.com","disqus.com","disquscdn.com","dropbox.com","dropboxapi.com","dropboxstatic.com","dropboxusercontent.com","duckduckgo.com","edgecastcdn.net","edgekey.net","edgesuite.net","eurekavpt.com","fastmail.com","firebaseio.com","flickr.com","flipboard.com","gfx.ms","gongm.in","hulu.com","id.heroku.com","io.io","issuu.com","ixquick.com","jtvnw.net","kat.cr","kik.com","kobo.com","kobobooks.com","licdn.com","live.net","livefilestore.com","llnwd.net","macrumors.com","medium.com","mega.nz","megaupload.com","messenger.com","netdna-cdn.com","nintendo.net","nsstatic.net","nytstyle.com","overcast.fm","openvpn.net","periscope.tv","pinimg.com","pinterest.com","potato.im","prfct.co","pscp.tv","quora.com","resilio.com","sfx.ms","shadowsocks.org","slack-edge.com","smartdnsproxy.com","sndcdn.com","soundcloud.com","startpage.com","staticflickr.com","symauth.com","symcb.com","symcd.com","textnow.com","textnow.me","thefacebook.com","thepiratebay.org","torproject.org","trustasiassl.com","tumblr.co","tumblr.com","tvb.com","txmblr.com","v2ex.com","vimeo.com","vine.co","vox-cdn.com","amazon.co.jp","amazon.com","amazonaws.com","bbc.co","bbc.com","claude.ai","anthropic.com","apache.org","docker.com","docker.io","elastic.co","elastic.com","gcr.io","gitlab.com","gitlab.io","jitpack.io","maven.org","medium.com","mvnrepository.com","quay.io","reddit.com","redhat.com","sonatype.org","sourcegraph.com","spring.io","spring.net","stackoverflow.com","compose-spec.io","docker.com","docker.io","dockerhub.com","discord.co","discord.com","discord.gg","discord.media","discordapp.com","discordapp.net","facebook.com","fb.com","fb.me","fbcdn.com","fbcdn.net","github.com","github.io","githubapp.com","githubassets.com","githubusercontent.com","1e100.net","2mdn.net","app-measurement.net","g.co","ggpht.com","goo.gl","googleapis.cn","googleapis.com","gstatic.cn","gstatic.com","gvt0.com","gvt1.com","gvt2.com","gvt3.com","xn--ngstr-lra8j.com","youtu.be","youtube-nocookie.com","youtube.com","yt.be","ytimg.com","cdninstagram.com","instagram.com","instagr.am","iwara.tv","kakao.com","kakao.co.kr","kakaocdn.net","lin.ee","line-apps.com","line-cdn.net","line-scdn.net","line.me","line.naver.jp","nhncorp.jp","openai.com","challenges.cloudflare.com","livefilestore.com","oneclient.sfx.ms","onedrive.com","onedrive.live.com","photos.live.com","skydrive.wns.windows.com","spoprod-a.akamaihd.net","storage.live.com","storage.msn.com","8teenxxx.com","ahcdn.com","bcvcdn.com","bongacams.com","chaturbate.com","dditscdn.com","livejasmin.com","phncdn.com","phprcdn.com","pornhub.com","pornhubpremium.com","rdtcdn.com","redtube.com","sb-cd.com","spankbang.com","t66y.com","xhamster.com","xnxx-cdn.com","xnxx.com","xvideos-cdn.com","xvideos.com","ypncdn.com","pixiv.net","pximg.net","fanbox.cc","amplitude.com","firebaseio.com","hockeyapp.net","readdle.com","smartmailcloud.com","fanatical.com","humblebundle.com","underlords.com","valvesoftware.com","playartifact.com","steam-chat.com","steamcommunity.com","steamgames.com","steampowered.com","steamserver.net","steamstatic.com","steamstat.us","tap.io","taptap.tw","twitch.tv","ttvnw.net","jtvnw.net","t.co","twimg.co","twimg.com","twimg.org","x.com","t.me","tdesktop.com","telegra.ph","telegram.me","telegram.org","telesco.pe","terabox.com","teraboxcdn.com","mediawiki.org","wikibooks.org","wikidata.org","wikileaks.org","wikimedia.org","wikinews.org","wikipedia.org","wikiquote.org","wikisource.org","wikiversity.org","wikivoyage.org","wiktionary.org","zoom.us","zoomgov.com","neulion.com","icntv.xyz","flzbcdn.xyz","ocnttv.com","vikacg.com","picjs.xyz"],"domain_keyword":["1e100","abema","appledaily","avtb","beetalk","blogspot","dropbox","facebook","fbcdn","github","gmail","google","instagram","porn","sci-hub","spotify","telegram","twitter","whatsapp","youtube","jw","speedtest","ip","naver","zoom","webex","uk-live","1drv","onedrive","skydrive","porn","ttvnw"],"ip_cidr":["13.32.0.0/15","13.35.0.0/17","18.184.0.0/15","18.194.0.0/15","18.208.0.0/13","18.232.0.0/14","52.58.0.0/15","52.74.0.0/16","52.77.0.0/16","52.84.0.0/15","52.200.0.0/13","54.93.0.0/16","54.156.0.0/14","54.226.0.0/15","54.230.156.0/22","31.13.24.0/21","31.13.64.0/18","45.64.40.0/22","66.220.144.0/20","69.63.176.0/20","69.171.224.0/19","74.119.76.0/22","103.4.96.0/22","129.134.0.0/17","157.240.0.0/17","173.252.64.0/18","179.60.192.0/22","185.60.216.0/22","204.15.20.0/22","74.125.0.0/16","173.194.0.0/16","120.232.181.162/32","120.241.147.226/32","120.253.253.226/32","120.253.255.162/32","120.253.255.34/32","120.253.255.98/32","180.163.150.162/32","180.163.150.34/32","180.163.151.162/32","180.163.151.34/32","203.208.39.0/24","203.208.40.0/24","203.208.41.0/24","203.208.43.0/24","203.208.50.0/24","220.181.174.162/32","220.181.174.226/32","220.181.174.34/32","1.201.0.0/24","27.0.236.0/22","103.27.148.0/22","103.246.56.0/22","110.76.140.0/22","113.61.104.0/22","103.2.28.0/24","103.2.30.0/23","119.235.224.0/24","119.235.232.0/24","119.235.235.0/24","119.235.236.0/23","147.92.128.0/17","203.104.128.0/19","91.108.0.0/16","109.239.140.0/24","149.154.160.0/20","18.194.0.0/15","34.224.0.0/12","54.242.0.0/15","50.22.198.204/30","208.43.122.128/27","108.168.174.0/16","173.192.231.32/27","158.85.5.192/27","174.37.243.0/16","158.85.46.128/27","173.192.222.160/27","184.173.128.0/17","158.85.224.160/27","75.126.150.0/16","69.171.235.0/16"],"domain":["d1q6f0aelx0por.cloudfront.net","d2wy8f7a9ursnm.cloudfront.net","d36jcksde1wxzq.cloudfront.net","steambroadcast.akamaized.net","steamcommunity-a.akamaihd.net","steamstore-a.akamaihd.net","steamusercontent-a.akamaihd.net","steamuserimages-a.akamaihd.net","steampipe.akamaized.net"],"outbound":"🚀 节点选择"},{"process_name":["cfnat-android-arm64","cfnat-darwin-amd64","cfnat-darwin-arm64","cfnat-dragonfly-amd64","cfnat-freebsd-386","cfnat-freebsd-amd64","cfnat-freebsd-arm","cfnat-freebsd-arm64","cfnat-linux-386","cfnat-linux-amd64","cfnat-linux-arm","cfnat-linux-arm64","cfnat-linux-mips","cfnat-linux-mips64","cfnat-linux-mips64le","cfnat-linux-mipsle","cfnat-linux-ppc64","cfnat-linux-ppc64le","cfnat-linux-riscv64","cfnat-linux-s390x","cfnat-netbsd-386","cfnat-netbsd-amd64","cfnat-netbsd-arm","cfnat-netbsd-arm64","cfnat-openbsd-386","cfnat-openbsd-amd64","cfnat-openbsd-arm","cfnat-openbsd-arm64","cfnat-plan9-386","cfnat-plan9-amd64","cfnat-solaris-amd64","cfnat-termux","cfnat-windows-386.exe","cfnat-windows-amd64.exe","cfnat-windows-arm.exe","cfnat-windows-arm64.exe","cfnat-windows7-386.exe","cfnat-windows7-amd64.exe","colo-android-arm64","colo-darwin-amd64","colo-darwin-arm64","colo-dragonfly-amd64","colo-freebsd-386","colo-freebsd-amd64","colo-freebsd-arm","colo-freebsd-arm64","colo-linux-386","colo-linux-amd64","colo-linux-arm","colo-linux-arm64","colo-linux-mips","colo-linux-mips64","colo-linux-mips64le","colo-linux-mipsle","colo-linux-ppc64","colo-linux-ppc64le","colo-linux-riscv64","colo-linux-s390x","colo-netbsd-386","colo-netbsd-amd64","colo-netbsd-arm","colo-netbsd-arm64","colo-openbsd-386","colo-openbsd-amd64","colo-openbsd-arm","colo-openbsd-arm64","colo-plan9-386","colo-plan9-amd64","colo-solaris-amd64","colo-windows-386.exe","colo-windows-amd64.exe","colo-windows-arm.exe","colo-windows-arm64.exe","subs-check.exe"],"outbound":"🎯 全球直连"},{"domain_suffix":["acl4.ssr","ip6-localhost","ip6-loopback","lan","local","localhost","hiwifi.com","leike.cc","miwifi.com","my.router","p.to","peiluyou.com","phicomm.me","router.ctc","routerlogin.com","tendawifi.com","zte.home","tplogin.cn","wifi.cmcc"],"ip_cidr":["0.0.0.0/8","10.0.0.0/8","100.64.0.0/10","127.0.0.0/8","172.16.0.0/12","192.168.0.0/16","198.18.0.0/16","224.0.0.0/4"],"domain":["instant.arubanetworks.com","setmeup.arubanetworks.com","router.asus.com","www.asusrouter.com"],"outbound":"🎯 全球直连"},{"domain_suffix":["ol.epicgames.com","dizhensubao.getui.com","googletraveladservices.com","tracking-protection.cdn.mozilla.net","koodomobile.com","koodomobile.ca"],"domain":["dl.google.com","origin-a.akamaihd.net","fairplay.l.qq.com","livew.l.qq.com","vd.l.qq.com","errlog.umeng.com","msg.umeng.com","msg.umengcloud.com","tracking.miui.com","app.adjust.com","bdtj.tagtic.cn","rewards.hypixel.net"],"outbound":"🎯 全球直连"},{"domain_suffix":["zuoyebang.com","steampy.com","qq.com","gushiwen.cn"],"outbound":"🎯 全球直连"},{"domain_suffix":["13th.tech","423down.com","bokecc.com","chaipip.com","chinaplay.store","hrtsea.com","kaikeba.com","laomo.me","mpyit.com","msftconnecttest.com","msftncsi.com","qupu123.com","pdfwifi.com","zhenguanyu.biz","zhenguanyu.com","snapdrop.net","tebex.io","cn","xn--fiqs8s","xn--55qx5d","xn--io0a7i","360.com","360kuai.com","360safe.com","dhrest.com","qhres.com","qhstatic.com","qhupdate.com","so.com","4399.com","4399pk.com","5054399.com","img4399.com","58.com","1688.com","aliapp.org","alibaba.com","alibabacloud.com","alibabausercontent.com","alicdn.com","alicloudccp.com","aliexpress.com","aliimg.com","alikunlun.com","alipay.com","alipayobjects.com","alisoft.com","aliyun.com","aliyuncdn.com","aliyuncs.com","aliyundrive.com","aliyundrive.net","amap.com","autonavi.com","dingtalk.com","ele.me","hichina.com","mmstat.com","mxhichina.com","soku.com","taobao.com","taobaocdn.com","tbcache.com","tbcdn.com","tmall.com","tmall.hk","ucweb.com","xiami.com","xiami.net","ykimg.com","youku.com","baidu.com","baidubcr.com","baidupcs.com","baidustatic.com","bcebos.com","bdimg.com","bdstatic.com","bdurl.net","hao123.com","hao123img.com","jomodns.com","yunjiasu-cdn.net","acg.tv","acgvideo.com","b23.tv","bigfun.cn","bigfunapp.cn","biliapi.com","biliapi.net","bilibili.com","bilibili.co","biliintl.co","biligame.com","biligame.net","bilivideo.com","bilivideo.cn","hdslb.com","im9.com","smtcdns.net","amemv.com","bdxiguaimg.com","bdxiguastatic.com","byted-static.com","bytedance.com","bytedance.net","bytedns.net","bytednsdoc.com","bytegoofy.com","byteimg.com","bytescm.com","bytetos.com","bytexservice.com","douyin.com","douyincdn.com","douyinpic.com","douyinstatic.com","douyinvod.com","feelgood.cn","feiliao.com","gifshow.com","huoshan.com","huoshanzhibo.com","ibytedapm.com","iesdouyin.com","ixigua.com","kspkg.com","pstatp.com","snssdk.com","toutiao.com","toutiao13.com","toutiaoapi.com","toutiaocdn.com","toutiaocdn.net","toutiaocloud.com","toutiaohao.com","toutiaohao.net","toutiaoimg.com","toutiaopage.com","wukong.com","zijieapi.com","zijieimg.com","zjbyte.com","zjcdn.com","cctv.com","cctvpic.com","livechina.com","auth.wo.cn","cmpassport.com","id6.me","mob.com","open.e.189.cn","21cn.com","didialift.com","didiglobal.com","udache.com","bytefcdnrd.com","edgesrv.com","douyu.com","douyu.tv","douyucdn.cn","douyuscdn.com","douyutv.com","epicgames.com","epicgames.dev","helpshift.com","paragon.com","unrealengine.com","dbankcdn.com","hc-cdn.com","hicloud.com","hihonor.com","huawei.com","huaweicloud.com","huaweishop.net","hwccpc.com","vmall.com","vmallres.com","allawnfs.com","allawno.com","allawntech.com","coloros.com","heytap.com","heytapcs.com","heytapdownload.com","heytapimage.com","heytapmobi.com","oppo.com","oppoer.me","oppomobile.com","iflyink.com","iflyrec.com","iflytek.com","71.am","71edge.com","iqiyi.com","iqiyipic.com","ppsimg.com","qiyi.com","qiyipic.com","qy.net","360buy.com","360buyimg.com","jcloudcs.com","jd.com","jd.hk","jdcloud.com","jdpay.com","paipai.com","iciba.com","ksosoft.com","ksyun.com","kuaishou.com","yximgs.com","meitu.com","meitudata.com","meitustat.com","meipai.com","le.com","lecloud.com","letv.com","letvcloud.com","letvimg.com","letvlive.com","letvstore.com","hitv.com","hunantv.com","mgtv.com","duokan.com","mi-img.com","mi.com","miui.com","xiaomi.com","xiaomi.net","xiaomicp.com","126.com","126.net","127.net","163.com","163yun.com","lofter.com","netease.com","ydstatic.com","youdao.com","pplive.com","pptv.com","pinduoduo.com","yangkeduo.com","leju.com","miaopai.com","sina.com","sina.com.cn","sina.cn","sinaapp.com","sinaapp.cn","sinaimg.com","sinaimg.cn","weibo.com","weibo.cn","weibocdn.com","weibocdn.cn","xiaoka.tv","go2map.com","sogo.com","sogou.com","sogoucdn.com","sohu-inc.com","sohu.com","sohucs.com","sohuno.com","sohurdc.com","v-56.com","playstation.com","playstation.net","playstationnetwork.com","sony.com","sonyentertainmentnetwork.com","cm.steampowered.com","steamcontent.com","steamusercontent.com","steamchina.com","foxmail.com","gtimg.com","idqqimg.com","igamecj.com","myapp.com","myqcloud.com","qq.com","qqmail.com","qqurl.com","smtcdns.com","smtcdns.net","soso.com","tencent-cloud.net","tencent.com","tencentmind.com","tenpay.com","wechat.com","weixin.com","weiyun.com","appsimg.com","appvipshop.com","vip.com","vipstatic.com","ximalaya.com","xmcdn.com","00cdn.com","88cdn.com","kanimg.com","kankan.com","p2cdn.com","sandai.net","thundercdn.com","xunlei.com","got001.com","p4pfile.com","rrys.tv","rrys2020.com","yyets.com","zimuzu.io","zimuzu.tv","zmz001.com","zmz002.com","zmz003.com","zmz004.com","zmz2019.com","zmzapi.com","zmzapi.net","zmzfile.com","teamviewer.com","baomitu.com","bootcss.com","jiasule.com","staticfile.org","upaiyun.com","doh.pub","dns.alidns.com","doh.360.cn","10010.com","115.com","12306.com","17173.com","178.com","17k.com","360doc.com","36kr.com","3dmgame.com","51cto.com","51job.com","51jobcdn.com","56.com","8686c.com","abchina.com","abercrombie.com","acfun.tv","air-matters.com","air-matters.io","aixifan.com","algocasts.io","babytree.com","babytreeimg.com","baicizhan.com","baidupan.com","baike.com","biqudu.com","biquge.com","bitauto.com","bosszhipin.com","c-ctrip.com","camera360.com","cdnmama.com","chaoxing.com","che168.com","chinacache.net","chinaso.com","chinaz.com","chinaz.net","chuimg.com","cibntv.net","clouddn.com","cloudxns.net","cn163.net","cnblogs.com","cnki.net","cnmstl.net","coolapk.com","coolapkmarket.com","csdn.net","ctrip.com","dangdang.com","dfcfw.com","dianping.com","dilidili.wang","douban.com","doubanio.com","dpfile.com","duowan.com","dxycdn.com","dytt8.net","easou.com","eastday.com","eastmoney.com","ecitic.com","element-plus.org","ewqcxz.com","fang.com","fantasy.tv","feng.com","fengkongcloud.com","fir.im","frdic.com","fresh-ideas.cc","ganji.com","ganjistatic1.com","geetest.com","geilicdn.com","ghpym.com","godic.net","guazi.com","gwdang.com","gzlzfm.com","haibian.com","haosou.com","hollisterco.com","hongxiu.com","huajiao.com","hupu.com","huxiucdn.com","huya.com","ifeng.com","ifengimg.com","images-amazon.com","infzm.com","ipip.net","it168.com","ithome.com","ixdzs.com","jianguoyun.com","jianshu.com","jianshu.io","jianshuapi.com","jiathis.com","jmstatic.com","jumei.com","kaola.com","knewone.com","koowo.com","koyso.com","ksyungslb.com","kuaidi100.com","kugou.com","lancdns.com","landiannews.com","lanzou.com","lanzoui.com","lanzoux.com","lemicp.com","letitfly.me","lizhi.fm","lizhi.io","lizhifm.com","luoo.net","lvmama.com","lxdns.com","maoyan.com","meilishuo.com","meituan.com","meituan.net","meizu.com","migucloud.com","miguvideo.com","mobike.com","mogu.com","mogucdn.com","mogujie.com","moji.com","moke.com","msstatic.com","mubu.com","myunlu.com","nruan.com","nuomi.com","onedns.net","oneplus.com","onlinedown.net","oracle.com","oschina.net","ourdvs.com","polyv.net","qbox.me","qcloud.com","qcloudcdn.com","qdaily.com","qdmm.com","qhimg.com","qianqian.com","qidian.com","qihucdn.com","qin.io","qiniu.com","qiniucdn.com","qiniudn.com","qiushibaike.com","quanmin.tv","qunar.com","qunarzz.com","realme.com","repaik.com","ruguoapp.com","runoob.com","sankuai.com","segmentfault.com","sf-express.com","shumilou.net","simplecd.me","smzdm.com","snwx.com","soufunimg.com","sspai.com","startssl.com","suning.com","synology.com","taihe.com","th-sjy.com","tianqi.com","tianqistatic.com","tianyancha.com","tianyaui.com","tietuku.com","tiexue.net","tmiaoo.com","trip.com","ttmeiju.com","tudou.com","tuniu.com","tuniucdn.com","umengcloud.com","upyun.com","uxengine.net","videocc.net","vivo.com","wandoujia.com","weather.com","weico.cc","weidian.com","weiphone.com","weiphone.net","womai.com","wscdns.com","xdrig.com","xhscdn.com","xiachufang.com","xiaohongshu.com","xiaojukeji.com","xinhuanet.com","xip.io","xitek.com","xiumi.us","xslb.net","xueqiu.com","yach.me","yeepay.com","yhd.com","yihaodianimg.com","yinxiang.com","yinyuetai.com","yixia.com","ys168.com","yuewen.com","yy.com","yystatic.com","zealer.com","zhangzishi.cc","zhanqi.tv","zhaopin.com","zhihu.com","zhimg.com","zhipin.com","zhongsou.com","zhuihd.com","cmbchina.com","95516.com"],"domain_keyword":["360buy","alicdn","alimama","alipay","appzapp","baidupcs","bilibili","ccgslb","chinacache","duobao","jdpay","moke","qhimg","vpimg","xiami","xiaomi"],"domain":["auth.wosms.cn","config.cmpassport.com","enrichgw.10010.com","hmrz.wo.cn","id.mail.wo.cn","log.cmpassport.com","log1.cmpassport.com","mdn.open.wo.cn","nishub1.10010.com","opencloud.wostore.cn","ye.dun.163yun.com","csgo.wmsj.cn","dota2.wmsj.cn","wmsjsteam.com","dl.steam.clngaa.com","dl.steam.ksyna.com","st.dl.bscstorage.net","st.dl.eccdnx.com","st.dl.pinyuncloud.com","xz.pphimalayanrt.com","steampipe.steamcontent.tnkjmec.com","steampowered.com.8686c.com","steamstatic.com.8686c.com"],"ip_cidr":["139.220.243.27/32","172.16.102.56/32","185.188.32.1/28","221.226.128.146/32","1.12.12.12/32"],"outbound":"🎯 全球直连"},{"ip_cidr":["8.128.0.0/10","8.209.32.0/22","8.209.40.0/21","8.209.48.0/20","8.210.0.0/16","8.211.64.0/18","8.211.128.0/20","8.211.144.0/21","8.211.152.0/22","8.211.208.0/20","8.211.224.0/19","8.212.0.0/14","8.216.0.0/13","14.1.112.0/22","45.112.212.0/22","47.52.0.0/16","47.56.0.0/15","47.75.0.0/16","47.89.0.0/18","47.89.64.0/24","47.89.82.0/23","47.89.91.0/24","47.89.100.0/23","47.90.0.0/17","47.91.128.0/17","47.92.0.0/14","47.240.0.0/16","47.242.0.0/15","47.244.0.0/16","47.246.5.0/24","47.246.16.0/24","47.246.60.0/23","47.246.65.0/24","59.82.0.0/20","59.82.240.0/21","59.82.248.0/22","103.52.76.0/22","103.206.40.0/22","110.76.21.0/24","110.76.23.0/24","112.125.0.0/17","116.251.79.0/24","116.251.80.0/22","116.251.84.0/24","116.251.88.0/22","116.251.93.0/24","116.251.94.0/23","116.251.102.0/23","116.251.104.0/21","116.251.112.0/21","116.251.124.0/22","119.38.208.0/20","119.38.224.0/20","119.42.224.0/20","140.205.1.0/24","140.205.122.0/24","149.129.64.0/18","163.181.32.0/22","163.181.40.0/24","170.33.0.0/22","198.11.141.0/24","198.11.184.0/21","205.204.104.0/23","205.204.117.0/24","205.204.122.0/23","205.204.124.0/22","45.40.192.0/19","49.51.56.0/22","49.51.60.0/23","49.51.110.0/23","49.51.112.0/20","62.234.0.0/16","94.191.0.0/17","103.7.28.0/22","109.244.0.0/16","111.30.128.0/21","111.30.136.0/24","111.30.139.0/24","111.30.140.0/23","115.159.0.0/16","119.28.0.0/18","119.28.64.0/19","119.28.124.0/23","119.28.128.0/20","119.28.164.0/22","119.28.168.0/21","119.28.176.0/20","119.28.192.0/19","119.28.224.0/21","119.29.0.0/16","121.51.0.0/16","129.28.0.0/16","129.204.0.0/16","129.211.0.0/16","132.232.0.0/16","134.175.0.0/16","146.56.192.0/18","150.109.32.0/19","150.109.64.0/20","150.109.96.0/19","152.136.0.0/16","162.14.0.0/16","182.254.0.0/16","188.131.128.0/17","203.195.128.0/17","203.205.128.0/20","203.205.144.0/21","203.205.158.0/24","203.205.180.0/22","203.205.208.0/22","203.205.212.0/23","203.205.218.0/23","203.205.220.0/22","203.205.248.0/21","212.64.0.0/17","212.129.128.0/17","45.113.194.0/23","63.243.252.0/24","103.235.44.0/22","106.12.0.0/15","114.28.224.0/20","180.76.0.0/16","182.61.0.0/16","185.10.105.0/24","202.46.48.0/20","203.90.238.0/24","43.254.0.0/22","45.249.212.0/22","49.4.0.0/17","103.31.200.0/22","103.218.216.0/22","114.115.128.0/17","114.116.0.0/16","116.63.128.0/18","116.66.184.0/22","117.78.0.0/18","119.3.0.0/16","119.8.32.0/19","121.36.0.0/17","121.36.128.0/18","121.37.0.0/17","122.112.128.0/17","139.9.0.0/18","139.9.64.0/19","139.9.100.0/22","139.9.104.0/21","139.9.112.0/20","139.9.128.0/18","139.9.192.0/19","139.9.224.0/20","139.9.240.0/21","139.9.248.0/22","139.159.128.0/19","139.159.160.0/22","139.159.164.0/23","139.159.168.0/21","139.159.176.0/20","139.159.192.0/18","159.138.0.0/18","159.138.64.0/21","159.138.79.0/24","159.138.80.0/20","159.138.96.0/20","159.138.112.0/21","159.138.125.0/24","159.138.128.0/19","42.186.0.0/16","45.127.128.0/22","45.195.24.0/24","45.253.132.0/22","45.253.240.0/22","45.254.48.0/23","59.111.0.0/20","59.111.128.0/17","103.71.120.0/21","103.71.128.0/22","103.71.196.0/22","103.71.200.0/22","103.72.12.0/22","103.72.18.0/23","103.72.24.0/22","103.72.28.0/23","103.72.38.0/23","103.72.40.0/23","103.72.44.0/22","103.72.48.0/21","103.72.128.0/21","103.74.24.0/21","103.74.48.0/22","103.129.252.0/22","103.131.252.0/22","103.135.240.0/22","103.196.64.0/22","106.2.32.0/19","106.2.64.0/18","114.113.196.0/22","114.113.200.0/22","115.236.112.0/20","115.238.76.0/22","123.58.160.0/19","223.252.192.0/19","101.198.128.0/18","101.198.192.0/24","101.198.194.0/23","101.198.196.0/22","101.198.200.0/21","101.198.208.0/20","101.199.196.0/22"],"outbound":"🎯 全球直连"},{"process_name":["aria2c.exe","fdm.exe","folx.exe","nettransport.exe","thunder.exe","transmission.exe","utorrent.exe","webtorrent.exe","webtorrent helper.exe","qbittorrent.exe","downloadservice.exe","weiyun.exe","baidunetdisk.exe"],"domain_suffix":["smtp"],"domain_keyword":["aria2"],"outbound":"🎯 全球直连"},{"geoip":"cn","outbound":"🎯 全球直连"}],"auto_detect_interface":true,"final":""},"experimental":{"cache_file":{"enabled":true,"store_fakeip":true},"clash_api":{"external_controller":"127.0.0.1:9090","external_ui":"dashboard"}}}
+{
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "tls://1.1.1.1",
+        "address_resolver": "dns_resolver",
+        "strategy": "ipv4_only",
+        "detour": "🚀 节点选择"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://dns.alidns.com/dns-query",
+        "address_resolver": "dns_resolver",
+        "strategy": "ipv4_only",
+        "detour": "DIRECT"
+      },
+      {
+        "tag": "dns_resolver",
+        "address": "223.5.5.5",
+        "detour": "DIRECT"
+      },
+      {
+        "tag": "dns_success",
+        "address": "rcode://success"
+      },
+      {
+        "tag": "dns_refused",
+        "address": "rcode://refused"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_resolver"
+      },
+      {
+        "rule_set": "geolocation-!cn",
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip"
+      },
+      {
+        "rule_set": "geolocation-!cn",
+        "query_type": [
+          "CNAME"
+        ],
+        "server": "dns_proxy"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA",
+          "CNAME"
+        ],
+        "invert": true,
+        "server": "dns_refused",
+        "disable_cache": true
+      }
+    ],
+    "final": "dns_direct",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "ntp": {
+    "enabled": true,
+    "server": "time.apple.com",
+    "server_port": 123,
+    "interval": "30m",
+    "detour": "DIRECT"
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 2080
+    },
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed",
+      "sniff": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "🚀 节点选择",
+      "outbounds": [
+        "DIRECT",
+        "REJECT",
+        "⚡ 自动选择",
+        "***更新日期：2025.04.17***",
+        "US_CA_01",
+        "US_CA_02",
+        "US_CA_03",
+        "KO_01",
+        "KO_02",
+        "JPN_01",
+        "JPN_02",
+        "JPN_03"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "⚡ 自动选择",
+      "outbounds": [
+        "***更新日期：2025.04.17***",
+        "US_CA_01",
+        "US_CA_02",
+        "US_CA_03",
+        "KO_01",
+        "KO_02",
+        "JPN_01",
+        "JPN_02",
+        "JPN_03"
+      ]
+    },
+    {
+      "type": "direct",
+      "tag": "DIRECT"
+    },
+    {
+      "type": "block",
+      "tag": "REJECT"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "trojan",
+      "tag": "***更新日期：2025.04.17***",
+      "server": "us-la-01.cjmom.us",
+      "server_port": 31178,
+      "password": "zEnyvyleum",
+      "network": "tcp",
+      "tcp_fast_open": false,
+      "tls": {
+        "enabled": true,
+        "server_name": "www.baidu.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "US_CA_01",
+      "type": "shadowsocks",
+      "server": "us-la-01.cjmom.us",
+      "server_port": 49308,
+      "method": "xchacha20-ietf-poly1305",
+      "password": "wpJvwojCicODwrzCh8OLwqsFV8OvdSnDlsOxAcK+bynDrwXCo2bDiD8Ge8KeIV7Cng==",
+      "network": "tcp",
+      "tcp_fast_open": false
+    },
+    {
+      "tag": "US_CA_02",
+      "type": "vmess",
+      "server": "us-la-01.cjmom.us",
+      "server_port": 52914,
+      "uuid": "deab221b-0aa8-4980-85e8-933358535e4a",
+      "alter_id": 0,
+      "security": "auto",
+      "network": "tcp",
+      "tcp_fast_open": false,
+      "transport": {}
+    },
+    {
+      "type": "vless",
+      "tag": "US_CA_03",
+      "server": "us-la-01.cjmom.us",
+      "server_port": 31199,
+      "uuid": "aed73f61-bf00-4d2a-ae3a-3a17b77b29ce",
+      "tcp_fast_open": false,
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "lZlCZKE0KFeSYPhnGw-GOi3dAEtMgw_UtUGvaykUmiw",
+          "short_id": "4e5c"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "network": "tcp",
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "type": "vless",
+      "tag": "KO_01",
+      "server": "13.125.94.238",
+      "server_port": 27018,
+      "uuid": "394200f8-e6b2-46d9-9c72-d820e01e42a5",
+      "tcp_fast_open": false,
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "PBBZ7GsalxVujT9C8S3A6JPs-1meaJZ11uLv_eosAis",
+          "short_id": "3e7482c1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "network": "tcp",
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "KO_02",
+      "type": "hysteria2",
+      "server": "13.125.94.238",
+      "server_port": 40071,
+      "password": "394200f8-e6b2-46d9-9c72-d820e01e42a5",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "obfs": {}
+    },
+    {
+      "type": "vless",
+      "tag": "JPN_01",
+      "server": "54.92.80.253",
+      "server_port": 48752,
+      "uuid": "7f951532-dd6c-463f-99f0-d80bf762d37c",
+      "tcp_fast_open": false,
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "k5C7N6ATRJGpJPzK5ca5v833gVvtpSG72tIuoZhFEH8",
+          "short_id": "51a3e57a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "network": "tcp",
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "JPN_02",
+      "type": "vmess",
+      "server": "54.92.80.253",
+      "server_port": 48753,
+      "uuid": "7f951532-dd6c-463f-99f0-d80bf762d37c",
+      "alter_id": 0,
+      "security": "auto",
+      "network": "tcp",
+      "tcp_fast_open": false,
+      "transport": {
+        "type": "ws",
+        "path": "7f951532-dd6c-463f-99f0-d80bf762d37c-vm",
+        "headers": {
+          "Host": "www.bing.com"
+        }
+      }
+    },
+    {
+      "tag": "JPN_03",
+      "type": "hysteria2",
+      "server": "54.92.80.253",
+      "server_port": 48754,
+      "password": "7f951532-dd6c-463f-99f0-d80bf762d37c",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true
+      },
+      "obfs": {}
+    },
+    {
+      "type": "selector",
+      "tag": "🔍 谷歌服务",
+      "outbounds": [
+        "🚀 节点选择",
+        "DIRECT",
+        "REJECT",
+        "⚡ 自动选择",
+        "***更新日期：2025.04.17***",
+        "US_CA_01",
+        "US_CA_02",
+        "US_CA_03",
+        "KO_01",
+        "KO_02",
+        "JPN_01",
+        "JPN_02",
+        "JPN_03"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Ⓜ️ 微软服务",
+      "outbounds": [
+        "🚀 节点选择",
+        "DIRECT",
+        "REJECT",
+        "⚡ 自动选择",
+        "***更新日期：2025.04.17***",
+        "US_CA_01",
+        "US_CA_02",
+        "US_CA_03",
+        "KO_01",
+        "KO_02",
+        "JPN_01",
+        "JPN_02",
+        "JPN_03"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "🍏 苹果服务",
+      "outbounds": [
+        "🚀 节点选择",
+        "DIRECT",
+        "REJECT",
+        "⚡ 自动选择",
+        "***更新日期：2025.04.17***",
+        "US_CA_01",
+        "US_CA_02",
+        "US_CA_03",
+        "KO_01",
+        "KO_02",
+        "JPN_01",
+        "JPN_02",
+        "JPN_03"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "🌐 非中国",
+      "outbounds": [
+        "🚀 节点选择",
+        "DIRECT",
+        "REJECT",
+        "⚡ 自动选择",
+        "***更新日期：2025.04.17***",
+        "US_CA_01",
+        "US_CA_02",
+        "US_CA_03",
+        "KO_01",
+        "KO_02",
+        "JPN_01",
+        "JPN_02",
+        "JPN_03"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "🐟 漏网之鱼",
+      "outbounds": [
+        "🚀 节点选择",
+        "DIRECT",
+        "REJECT",
+        "⚡ 自动选择",
+        "***更新日期：2025.04.17***",
+        "US_CA_01",
+        "US_CA_02",
+        "US_CA_03",
+        "KO_01",
+        "KO_02",
+        "JPN_01",
+        "JPN_02",
+        "JPN_03"
+      ]
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh.sageer.me/https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-google.srs"
+      },
+      {
+        "tag": "microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh.sageer.me/https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-microsoft.srs"
+      },
+      {
+        "tag": "apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh.sageer.me/https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-apple.srs"
+      },
+      {
+        "tag": "geolocation-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh.sageer.me/https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-geolocation-!cn.srs"
+      },
+      {
+        "tag": "google-ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh.sageer.me/https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geoip/geoip-google.srs"
+      }
+    ],
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "DIRECT"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "🚀 节点选择"
+      },
+      {
+        "rule_set": [
+          "google"
+        ],
+        "outbound": "🔍 谷歌服务"
+      },
+      {
+        "rule_set": [
+          "microsoft"
+        ],
+        "outbound": "Ⓜ️ 微软服务"
+      },
+      {
+        "rule_set": [
+          "apple"
+        ],
+        "outbound": "🍏 苹果服务"
+      },
+      {
+        "rule_set": [
+          "geolocation-!cn"
+        ],
+        "outbound": "🌐 非中国"
+      },
+      {
+        "rule_set": [
+          "google-ip"
+        ],
+        "outbound": "🔍 谷歌服务"
+      }
+    ],
+    "auto_detect_interface": true,
+    "final": "🐟 漏网之鱼"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true
+    }
+  }
+}
